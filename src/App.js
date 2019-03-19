@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Route from './route/Route'
+import { hot } from 'react-hot-loader/root'
 import './App.scss';
 
 class App extends Component {
@@ -12,4 +13,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default hot(App)

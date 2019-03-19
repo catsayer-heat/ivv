@@ -10,6 +10,7 @@ class Menu extends Component {
                 <ul className="menu-lists">
                     <li><NavLink to="/index/account">账号管理</NavLink></li>
                     <li><NavLink to="/index/form">表单管理</NavLink></li>
+                    <li><NavLink to="/index/plus/">新增或修改</NavLink></li>
                 </ul>
             </div>
         )

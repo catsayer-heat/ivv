@@ -1,4 +1,5 @@
 import axios from 'axios'
+import msg from './msg'
 import qs from 'qs'
 function ajaxReq({url, params={}}) {
     return new Promise((resolve, reject) => {
@@ -12,9 +13,10 @@ function ajaxReq({url, params={}}) {
                 if(res.data.code === 0) {
                     resolve(res.data)
                 } else if(res.data.code === 996) {
-                   this.props.history.push('/login')
+                    msg('请先登陆再操作！', false)
+                    this.props.history.push('/login')
                 } else {
-                   throw res
+                    throw res
                 }
             } else {
                 throw res

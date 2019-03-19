@@ -5,6 +5,7 @@ import Menu from '../component/menu/Menu'
 import List from '../component/list/List'
 import Account from '../component/account/Account'
 import Form from '../component/form/Form'
+import Plus from '../component/plus/Plus'
 
 export default function() {
     return (
@@ -14,6 +15,7 @@ export default function() {
             <Route path='/index/list' key="List" component={List}/>
             <Route path='/index/account' key="account" component={Account}/>
             <Route path='/index/form' key="form" component={Form}/>
+            <Route path='/index/plus/:id?' key="plus" component={Plus}/>
         </div>  
     )
 }

@@ -31,7 +31,6 @@ class Login extends Component {
         })
     }
     render() {
-        console.log(this)
         const bg = {
             background: `url(${require('./bg.jpg')})`,
             backgroundRepeat: 'no-repeat',

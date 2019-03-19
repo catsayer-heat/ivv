@@ -1,5 +1,7 @@
 import React, {Component} from 'react'
 import { Input, Button, Radio} from 'element-react';
+import ajaxReq from '../../common/ajaxReq'
+import msg from '../../common/msg'
 import './account.scss'
 
 
@@ -15,6 +17,21 @@ class Account extends Component {
     }
     setManage = isManager=>{
         this.setState({isManager})
+    }
+    addAccount = () => {
+        if(!this.state.user) return msg('请输入新的账户', false)
+        if(!this.state.pwd) return msg('请输入密码', false)
+        ajaxReq.call(this, {
+            url: '',
+            params: {
+                user_name: this.state.user,
+                password: this.state.pwd,
+                is_super: this.state.isManager,
+                name: this.state.name
+            }
+        }).then(()=>{
+            msg('添加成功')
+        })
     }
     render() {
         return (
@@ -48,7 +65,7 @@ class Account extends Component {
                             </span>
                         </li>
                         <li>
-                            <Button type="primary">添加</Button>
+                            <Button onClick={this.addAccount} type="primary">添加</Button>
                         </li>
                     </ul>
                 </div>
