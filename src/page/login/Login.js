@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {Input, Button} from 'element-react'
 import ajaxReq from '../../common/ajaxReq'
+import msg from '../../common/msg'
 import './login.scss'
 
 class Login extends Component {
@@ -20,6 +21,8 @@ class Login extends Component {
     }
     //登陆
     login = () => {
+        if(!this.state.userVal) return msg('请填写用户名', false)
+        if(!this.state.pwd) return msg('请填写用户名', false)
         ajaxReq({
             url: 'login',
             params: {

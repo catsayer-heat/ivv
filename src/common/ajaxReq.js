@@ -16,6 +16,7 @@ function ajaxReq({url, params={}}) {
                     msg('请先登陆再操作！', false)
                     this.props.history.push('/login')
                 } else {
+                    msg(res.data.msg, false)
                     throw res
                 }
             } else {
