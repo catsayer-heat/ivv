@@ -63,6 +63,7 @@ class Plus extends Component {
         if (bool) {
             msg(verify, false)
         } else {
+            this.setState({loading: true})
             ajaxReq.call(this, {
                 url: '/artist/add_artists',
                 params: {
@@ -71,6 +72,7 @@ class Plus extends Component {
                 }
             }).then(() => {
                 msg('保存成功')
+                this.setState({loading: false})
             })
         }
     }
