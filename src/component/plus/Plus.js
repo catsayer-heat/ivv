@@ -102,11 +102,11 @@ class Plus extends Component {
                 <li key={keys}>
                     <span className="plus-name">{val.name}:</span>
                     <span className="plus-input">
-                        {val.type === 'text' ? <Input value={val.value} onChange={this.changeTextRadio.bind(this, keys)} /> : null}
-                        {val.type === 'textarea' ? <Input
+                        {val.type === 'text' ? <Input placeholder={`请输入${val.name}`} value={val.value} onChange={this.changeTextRadio.bind(this, keys)} /> : null}
+                        {val.type === 'textarea' ? <Input 
                             type="textarea" onChange={this.changeTextRadio.bind(this, keys)}
                             autosize={{ minRows: 2, maxRows: 4 }}
-                            placeholder="请输入内容"
+                            placeholder={`请输入${val.name}`}
                         /> : null}
                         {val.type === 'radio' ? val.options.map((value, key) => {
                             return <Radio key={key} value={value}
